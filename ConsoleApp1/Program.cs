@@ -25,11 +25,11 @@ class Program
         Regex tagPattern = new Regex(@"\[(.*?)\]");
         MatchCollection matches = tagPattern.Matches(title);
 
-        // Loop matches and check if they are valid channels and check if channel already listed
+        // Loop matches and check if they are valid channels
         foreach (Match match in matches)
         {
             string tag = match.Groups[1].Value;
-            if (validChannels.Contains(tag) && !foundChannels.Contains(tag))
+            if (validChannels.Contains(tag))
             {
                 foundChannels.Add(tag);
             }
